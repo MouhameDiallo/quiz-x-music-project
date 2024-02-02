@@ -100,37 +100,6 @@ class _AppState extends State<App> {
                               ),
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.play_arrow),
-                                iconSize: 28.0,
-                                onPressed: () {
-                                  // Lecture de la musique
-                                  if(audioUrl!="") {
-                                    audioPlayer.play(UrlSource(audioUrl));
-                                  }
-                                },
-                              ),
-                              IconButton(
-                                icon: const Icon(Icons.pause),
-                                iconSize: 28.0,
-                                onPressed: () {
-                                  // Pause de la musique
-                                  audioPlayer.pause();
-                                },
-                              ),
-                              IconButton(
-                                icon: const Icon(Icons.stop),
-                                iconSize: 28.0,
-                                onPressed: () {
-                                  // Arrêt de la musique
-                                  audioPlayer.stop();
-                                },
-                              ),
-                            ],
-                          )
                         ],
                       );
                     }),

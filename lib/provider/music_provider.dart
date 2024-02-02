@@ -1,7 +1,8 @@
 
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:quiz/models/music_model.dart';
+
 
 class MusicProvider extends ChangeNotifier{
   List<Music> musics = [];
@@ -9,7 +10,6 @@ class MusicProvider extends ChangeNotifier{
   final AudioPlayer audioPlayer = AudioPlayer();
 
   Future<void> playPause(int position) async {
-
     if(lastPosition!=position){
       musics[lastPosition].isPaused = true;
       await audioPlayer.stop();
@@ -28,6 +28,7 @@ class MusicProvider extends ChangeNotifier{
     print("Current system: ${musics[position].isPaused}");
     notifyListeners();
   }
+  void pause(int position)async{
 
-
+  }
 }
