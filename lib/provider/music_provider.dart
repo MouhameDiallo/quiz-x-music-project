@@ -21,14 +21,15 @@ class MusicProvider extends ChangeNotifier{
       musics[lastPosition].isPaused = true;
       notifyListeners();
     });
-    print('Element: ${audioPlayer.onPlayerComplete.first}');
     musics[position].isPaused = !musics[position].isPaused!;
     String audioUrl = musics[position].preview!;
     !musics[position].isPaused! ? await audioPlayer.play(UrlSource(audioUrl)): await audioPlayer.pause();
-    print("Current system: ${musics[position].isPaused}");
     notifyListeners();
   }
-  void pause(int position)async{
-
+  void stopAudio(int position)async{
+    musics[lastPosition].isPaused = true;
+    await audioPlayer.stop();
+    lastPosition = position;
+    musics[position].isPaused = true;
   }
 }

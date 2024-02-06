@@ -17,7 +17,6 @@ class MusicDetails extends StatelessWidget {
           "Détails",
           style: TextStyle(
             color: Colors.white,
-
           ),
         ),
         centerTitle: true,
@@ -61,9 +60,10 @@ class MusicDetails extends StatelessWidget {
           const SizedBox(
             height: 30.0,
           ),
-          const AudioButtonBar(),
+          AudioButtonBar(sound: music.preview!,),
         ],
       ),
     );
   }
+
 }
